@@ -1,7 +1,20 @@
 <?php
-require_once('../conexion.php');
+require_once('../conexionbd.php');
 
-$correo = "us1@email.com";
+// Si la sesión está vacía
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("location:index.php");
+}
+// echo '<pre>';
+// print_r($_SESSION['usuario']);
+// echo '</pre>';
+
+$usuario = $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'];
+$correoUsuario = $_SESSION['usuario']['email'];
+$tipoUsuario = $_SESSION['usuario']['tipoUsuario'];
+
+$correo = $correoUsuario;
 
 $sql = "SELECT f.id as fid, token FROM factura as f INNER JOIN usuario as u ON u.id = f.usuario_id WHERE email='" . $correo . "'
 ORDER BY fechaRegistroPago DESC LIMIT 1";
@@ -11,7 +24,7 @@ $row = $res->fetch_array();
 
 // Token
 $token = empty($row['token']) ? null : $row['token'];
-echo $token."</br>";
+echo $token . "</br>";
 
 // Verificar si se ha enviado el token por GET
 
@@ -36,19 +49,19 @@ if (!empty($idFactura)) {
 
 // Verificar si se ha enviado el token por GET
 // if (isset($_GET['pedido'])) {
-//     // Obtener el token enviado por la URL
-//     $tokenIngresado = trim($_GET['pedido']);
+// // Obtener el token enviado por la URL
+// $tokenIngresado = trim($_GET['pedido']);
 
-//     // Obtener el token almacenado en la sesión
-//     $tokenGuardado = $_SESSION['pedido'] ?? '';
+// // Obtener el token almacenado en la sesión
+// $tokenGuardado = $_SESSION['pedido'] ?? '';
 
-//     // Comparar los tokens
-//     if ($tokenIngresado === $tokenGuardado) {
-//         echo "¡Token válido! Verificación exitosa.";
-//         header('Location:../verpedido.php');
-//     } else {
-//         echo "Token inválido. Por favor, inténtalo de nuevo.";
-//     }
+// // Comparar los tokens
+// if ($tokenIngresado === $tokenGuardado) {
+// echo "¡Token válido! Verificación exitosa.";
+// header('Location:../verpedido.php');
 // } else {
-//     echo "No se ha proporcionado ningún token para validar.";
+// echo "Token inválido. Por favor, inténtalo de nuevo.";
+// }
+// } else {
+// echo "No se ha proporcionado ningún token para validar.";
 // }

@@ -48,9 +48,9 @@ $pedido = array(
     'totalAPagar' => $suma,
 
 );
-// echo '<pre>';
-// print_r($pedido);
-// echo '</pre>';
+echo '<pre>';
+print_r($pedido);
+echo '</pre>';
 
 //Insertar usuario
 
@@ -132,8 +132,6 @@ foreach ($productos as $k => $v) {
     $qry = $conexion->query($sql);
 }
 
-// ALTER TABLE boleto AUTO_INCREMENT = 1;
-// ALTER TABLE usuario AUTO_INCREMENT = 1;
 // ALTER TABLE factura AUTO_INCREMENT = 1;
 // ALTER TABLE transaccion AUTO_INCREMENT = 1;
 

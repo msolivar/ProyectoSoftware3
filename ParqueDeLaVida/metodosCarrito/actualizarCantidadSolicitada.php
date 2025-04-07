@@ -15,7 +15,7 @@ else $productos = false;
 
 
 
-require_once('../conexion.php');
+require_once('../conexionbd.php');
 
 //incluímos la conexión a nuestra base de datos
 $qry = $conexion->query("SELECT * FROM boleto WHERE id='" . $id . "'");

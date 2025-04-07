@@ -5,7 +5,19 @@ require_once(dirrecursos . 'accesibilidadweb.php');
 
 //Creamos sesión y una conexión con la base de datos.
 session_start();
-require_once('conexion.php');
+require_once('conexionbd.php');
+
+// Si la sesión está vacía
+if (!isset($_SESSION['usuario'])) {
+    header("location:index.php");
+}
+// echo '<pre>';
+// print_r($_SESSION['usuario']);
+// echo '</pre>';
+
+$usuario = $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'];
+$correoUsuario = $_SESSION['usuario']['email'];
+$tipoUsuario = $_SESSION['usuario']['tipoUsuario'];
 
 //Creamos la Sesion articulos que va almacenar los productos.
 
@@ -47,7 +59,7 @@ if (isset($_SESSION['articulos'])) {
 
     <?php
 
-	require_once(dirvista . 'bodyelementos.php');
+    require_once(dirvista . 'bodyelementos.php');
     require_once(dirvista . 'navbarprincipal.php');
 
     ?>
@@ -62,7 +74,7 @@ if (isset($_SESSION['articulos'])) {
 
             <div class="input-field col s6 m6 l6" id="botonContinuarCompra">
 
-                <a class="waves-effect waves-light btn green" href="index.php">
+                <a class="waves-effect waves-light btn green" href="iniciousuario">
 
                     <i class="material-icons right" style="color: white;">home</i>AGREGAR OTRO EVENTO
 
@@ -124,7 +136,7 @@ if (isset($_SESSION['articulos'])) {
 
             <div class="input-field col s6 m6 l6" id="botonContinuarC">
 
-                <a class="waves-effect waves-light btn green" href="index.php">
+                <a class="waves-effect waves-light btn green" href="iniciousuario">
 
                     <i class="material-icons right" style="color: white;">home</i>AGREGAR OTRO EVENTO
 

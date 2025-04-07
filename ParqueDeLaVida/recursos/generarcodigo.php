@@ -1,12 +1,25 @@
 <?php
-require_once('../conexion.php');
+require_once('../conexionbd.php');
+session_start();
 
 // Función para generar un token aleatorio
 function generarToken($longitud = 32) {
     return bin2hex(random_bytes($longitud));
 }
 
-$correo = "us1@email.com";
+// Si la sesión está vacía
+if (!isset($_SESSION['usuario'])) {
+    header("location:index.php");
+}
+// echo '<pre>';
+// print_r($_SESSION['usuario']);
+// echo '</pre>';
+
+$usuario = $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'];
+$correoUsuario = $_SESSION['usuario']['email'];
+$tipoUsuario = $_SESSION['usuario']['tipoUsuario'];
+
+$correo = $correoUsuario;
 
 // Generar el token
 $token = generarToken();

@@ -5,10 +5,10 @@ require_once(dirrecursos . 'funciones.php');
 require_once(dirrecursos . 'accesibilidadweb.php');
 
 session_start();
-require_once('conexion.php');
+require_once('conexionbd.php');
 
 // $tabla = "boleto";
-// require_once('descripciondelatabla.php');  // Mostrar La Descripcion De La Tabla
+// require_once(dirrecursos .'descripciondelatabla.php');  // Mostrar La Descripcion De La Tabla
 
 // Monto Total Venta En Caja Sin Pagar
 // $qry = $conexion->query("SELECT SUM(precio*disponibles) AS totalVentas FROM boleto");
@@ -37,9 +37,7 @@ if (isset($_SESSION['articulos'])) {
 }
 
 //echo "<pre>";
-//
 //print_r($productos);
-//
 //echo "</pre>";
 
 $consulta = "
@@ -59,7 +57,7 @@ $consulta = "
     DATE_FORMAT(fechaIngreso, '%l:%i %p') AS horaIngresoEvento
     FROM boleto 
     WHERE id > 1
-    ";
+    AND DATEDIFF('".$fecha_original."', DATE(fechaIngreso)) > 0";
 
 $qry = $conexion->query($consulta);
 
@@ -160,7 +158,7 @@ $qry = $conexion->query($consulta);
       /* Centra horizontalmente */
     }
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1600px) {
       .header-container {
         display: flex;
         justify-content: center;
@@ -187,10 +185,8 @@ $qry = $conexion->query($consulta);
 <body>
 
   <?php
-
   require_once(dirvista . 'bodyelementos.php');
-  require_once(dirvista . 'navbarprincipal.php');
-
+  require_once(dirvista . 'navbarinicio.php');
   ?>
 
   <?php
@@ -227,9 +223,7 @@ $qry = $conexion->query($consulta);
         ?>
 
           <!-- Botón para abrir el modal -->
-          <a class="waves-effect waves-light btn orange btnModal" href="#modalPago"
-            data-entrada="<?= $evento ?>"
-            data-precio="<?= $precio ?>">
+          <a class="waves-effect waves-light btn orange btnModal" href="login.php">
             Comprar Entrada
           </a>
 
@@ -281,9 +275,7 @@ $qry = $conexion->query($consulta);
                 <p><b>Hora Entrada:</b> <?= $horaIngresoEvento ?></p>
 
                 <!-- Botón para abrir el modal -->
-                <a class="waves-effect waves-light btn orange btnModal" href="#modalPago"
-                  data-entrada="<?= $evento ?>"
-                  data-precio="<?= $precio ?>">
+                <a class="waves-effect waves-light btn orange btnModal" href="login.php">
                   Comprar Entrada
                 </a>
 
@@ -303,212 +295,10 @@ $qry = $conexion->query($consulta);
 
   </div>
 
-  <!-- Modal Structure -->
-  <div id="modalPago" class="modal">
-
-    <!-- Botón para cerrar -->
-    <div class="modal-footer">
-      <a href="#!" id="btnCerrarModal" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-    </div>
-
-    <div class="modal-content">
-      <h4>Detalles de la Compra</h4>
-
-      <form action="<?= dircar ?>agregacar.php" method="post">
-        <div class="table-responsive mt-4">
-          <table class="table text-black"> <!-- Cambié text-white a text-black para visibilidad -->
-            <thead>
-              <tr>
-                <th>Entrada</th>
-                <th>Precio unitario</th>
-                <th>Cantidad</th>
-                <th>Total a pagar</th>
-              </tr>
-            </thead>
-
-            <?php
-            $color = array("lightgrey", "lightblue");
-            ?>
-
-            <tbody>
-              <tr bgcolor="<?= $color[1] ?>">
-                <td>
-                  <input readonly type="text" name="detalleEntrada" id="detalleEntrada" class="form-control"
-                    placeholder="Entrada" required>
-                </td>
-
-                <td>
-                  <input readonly type="text" name="precioEntrada" id="precioEntrada" class="form-control"
-                    placeholder="Precio Entrada" required>
-                </td>
-
-                <td>
-                  <input type="number" class="color" name="cantidad" id="cantidad" onkeypress="return soloNumeros(event)"
-                    placeholder="Cantidad" value="1" min="1" max="99" required>
-                </td>
-
-                <td>
-                  <input readonly type="text" id="totalPagar" name="totalPagar" class="form-control"
-                    placeholder="Total a Pagar" required>
-                </td>
-              </tr>
-            </tbody>
-
-          </table>
-        </div>
-
-        <div class="right-align">
-          <button type="submit" class="btn waves-effect waves-light indigo" style="width: 300px;">
-            <i class="material-icons" style="color:white;">shopping_cart</i>
-            RESERVAR EVENTO</button>
-        </div>
-
-      </form>
-    </div>
-  </div>
-
 </body>
 
 <?php
 require_once(dirvista . 'piedepagina.php');
 ?>
-
-<script>
-  //Liberar Carrito
-
-  // Función para liberar la sección llamando al servidor
-  //  function liberarSeccion() {
-  //
-  //    fetch('liberar.php') // Petición a PHP
-  //
-  //      .then(response => response.json()) // Convertir respuesta a JSON
-  //
-  //      .then(data => {
-  //
-  //        document.getElementById('estado').innerText = data.mensaje; // Actualizar estado
-  //
-  //      })
-  //
-  //      .catch(error => console.error('Error:', error));
-  //
-  //  }
-  //
-  //
-  //
-  //  // Esperar 3 segundos y luego liberar la sección
-  //
-  //  setTimeout(liberarSeccion, 3000);
-
-  //Ingresar soloNumeros
-
-  function soloNumeros(event) {
-
-    let tecla = event.key;
-    let input = event.target;
-
-    // Permite solo números (0-9)
-    if (!/^[0-9]$/.test(tecla)) {
-      return false; // Bloquea si no es número
-    }
-
-    // Verifica que el input no tenga más de 2 caracteres
-    if (input.value.length >= 2) {
-      return false; // Bloquea si ya tiene 2 caracteres
-    }
-
-    return true; // Permite la entrada válida
-
-  }
-
-  // Inicializar elementos de Materialize si es necesario
-  document.addEventListener('DOMContentLoaded', function() {
-
-    var elems = document.querySelectorAll('.modal');
-    // var instances = M.Modal.init(elems, options); 
-
-    // Capturar todos los botones con la clase btnModal y agregarles eventos
-    const botonesModal = document.querySelectorAll('.btnModal');
-
-    //Asignar Valores Estaticos al modal
-    botonesModal.forEach(function(boton) {
-      boton.addEventListener('click', function() {
-
-        // Obtener valores dinámicos del atributo data-*
-        const entrada = boton.getAttribute('data-entrada');
-        const precio = boton.getAttribute('data-precio');
-
-        document.getElementById('detalleEntrada').value = `${entrada}`;
-        document.getElementById('precioEntrada').value = `${precio}`;
-        document.getElementById('totalPagar').value = `$ ${precio}`;
-      });
-    });
-
-    //Reiniciar Cantidad si da click en el boton CerrarModal
-    var cantidadInput = document.getElementById('cantidad');
-    
-    document.getElementById('btnCerrarModal').addEventListener('click', function() {
-      cantidadInput.value = 1; // Reiniciar cantidad
-    });
-
-    // Observar cambios en los atributos del modal
-    var modal = document.getElementById('modalPago');
-    var observer = new MutationObserver(function(mutations) {
-
-      mutations.forEach(function(mutation) {
-
-        if (mutation.attributeName === "style") {
-
-          var displayValue = window.getComputedStyle(modal).display;
-
-          if (displayValue === "none") {
-
-            cantidadInput.value = 1; // Reinicia la cantidad a 1
-
-            // document.getElementById('totalPagar').value = ''; // Limpia el total a pagar
-
-          }
-        }
-      });
-
-    });
-
-    // Iniciar la observación de cambios en los atributos del modal
-    observer.observe(modal, {
-      attributes: true
-    });
-
-  });
-
-  // Or with jQuery
-  $(document).ready(function() {
-
-    $('.modal').modal();
-
-    $('#cantidad').on('input', function() {
-
-      let cantidadStr = document.getElementById('cantidad').value;
-
-      // Eliminar ceros iniciales si hay más de un dígito
-      if (/^0[0-9]+/.test(cantidadStr)) {
-
-        cantidadStr = cantidadStr.replace(/^0+/, ''); // Quita ceros iniciales
-        document.getElementById('cantidad').value = cantidadStr || 1; // Si queda vacío, pone 1
-
-      }
-
-      let cantidad = parseInt(cantidadStr) || 0; // Convertir a número entero
-      let precio = parseFloat(document.getElementById('precioEntrada').value) || 0;
-
-      // Si la cantidad es 0 o menor, corregir a 1
-      if (cantidad <= 0) {
-        cantidad = 1;
-      }
-
-      // Calcular el total
-      let total = cantidad * precio;
-      document.getElementById('totalPagar').value = "$ " + total;
-    });
-  });
-</script>
 
 </html>

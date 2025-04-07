@@ -8,21 +8,20 @@ session_start();
 require_once('conexionbd.php');
 
 // Si la sesión está vacía
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['admin'])) {
     header("location:index.php");
 }
 // echo '<pre>';
 // print_r($_SESSION['usuario']);
 // echo '</pre>';
 
-$usuario = $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'];
-$correoUsuario = $_SESSION['usuario']['email'];
-$tipoUsuario = $_SESSION['usuario']['tipoUsuario'];
+$usuario = $_SESSION['admin']['nombre'] . ' ' . $_SESSION['admin']['apellido'];
+$correoUsuario = $_SESSION['admin']['email'];
+$tipoUsuario = $_SESSION['admin']['tipoUsuario'];
 
 // Mostrar La Descripcion De La Tabla
-// $tabla = "usuario";
+// $tabla = "transaccion";
 // require_once(dirrecursos.'descripciondelatabla.php');  
-
 //Creamos la Sesion articulos que va almacenar los productos.
 
 if (isset($_SESSION['articulos'])) {
@@ -62,19 +61,15 @@ if (isset($_SESSION['articulos'])) {
 <body>
 
     <?php
-
     require_once(dirvista . 'bodyelementos.php');
-    require_once(dirvista . 'navbarprincipal.php');
-
+    require_once(dirvista . 'navbaradmin.php');
     ?>
 
     <?php
 
     //Hacemos la consulta a la base de datos para mostrar los pedidos
-    $qry = $conexion->query("SELECT f.id as 'f.id', usuario_id, productos, tipoDePago, totalAPagar,
-    estadoPago, fechaRegistroPago, u.id as 'u.id', cedula, nombre, email, fechaRegistroUsuario, 
-    telefono, password FROM factura f INNER JOIN usuario u ON f.usuario_id = u.id WHERE 
-    u.email = '" . $correoUsuario . "' ORDER BY f.id DESC;");
+    $qry = $conexion->query("SELECT f.id as 'f.id',usuario_id,productos,tipoDePago,totalAPagar,estadoPago,fechaRegistroPago,u.email,u.id as 'u.id',cedula,nombre,email,fechaRegistroUsuario,telefono,password 
+    FROM factura f INNER JOIN usuario u ON f.usuario_id = u.id ORDER BY f.id DESC;");
 
     $registros = $qry->num_rows;
 
@@ -82,16 +77,6 @@ if (isset($_SESSION['articulos'])) {
 
     ?>
         <div class="container row">
-
-            <div class="input-field col s9 m9 l9" id="botonContinuarCompra">
-
-                <a class="waves-effect waves-light btn green" href="iniciousuario.php">
-
-                    <i class="material-icons right" style="color: white;">home</i>AGREGAR COMPRA
-
-                </a>
-
-            </div>
 
             <!-- <div class="input-field col s6 m4 l4" id="botonFinalizarCompra">
 
@@ -111,11 +96,23 @@ if (isset($_SESSION['articulos'])) {
 
         ?>
 
+
+
     <?php
+
+
 
     }
 
+
+
     ?>
+
+
+
+
+
+
 
     <?php
 
@@ -125,12 +122,63 @@ if (isset($_SESSION['articulos'])) {
 
 </body>
 
+
+
 </html>
 
 <script>
+
     $(document).ready(function() {
 
         $('select').material_select();
+
+        // Detectar cuando el select cambia
+
+        $('.estadoPedido').on('change', function() {
+
+            var estadoPedido = $(this).val(); // Obtener el valor seleccionado
+
+            var idPedido = $(this).data('id'); // Obtener el ID del pedido
+
+            
+
+            // Realizar la solicitud AJAX
+
+            $.ajax({
+
+                url: '<?= dircar ?>actualizarestadopedido.php',  // Archivo PHP que procesa la actualización
+
+                type: 'POST',
+
+                data: {
+
+                    idPedido: idPedido,
+
+                    estadoPedido: estadoPedido
+
+                },
+
+                success: function(response) {
+
+                    // Mostrar el mensaje de éxito o error
+
+                    $('#mensaje').text(response);
+
+                    window.location.href = "verpagos.php";
+
+
+
+                },
+
+                error: function() {
+
+                    $('#mensaje').text('Error al actualizar el estado.');
+
+                }
+
+            });
+
+        });
 
     });
 </script>

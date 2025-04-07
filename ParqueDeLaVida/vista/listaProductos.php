@@ -132,31 +132,6 @@ $conexion->close();
 ?>
 
 <script>
-    //Ingresar soloNumeros
-    function soloNumeros(event) {
-        let tecla = event.key;
-        let input = event.target;
-
-        // Permite solo números (0-9)
-
-        if (!/^[0-9]$/.test(tecla)) {
-
-            return false; // Bloquea si no es número
-
-        }
-
-        // Verifica que el input no tenga más de 2 caracteres
-
-        if (input.value.length >= 2) {
-
-            return false; // Bloquea si ya tiene 2 caracteres
-
-        }
-
-        return true; // Permite la entrada válida
-
-    }
-
     $(document).ready(function() {
 
         $('.cantidadSolicitada').on('change', function() {

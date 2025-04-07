@@ -1,5 +1,5 @@
 <?php
-	require_once('../conexion.php');
+	require_once('../conexionbd.php');
 
 	$buscar = isset($_POST["buscar"]) ? trim($_POST["buscar"]) : "";
 

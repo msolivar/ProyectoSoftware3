@@ -4,9 +4,25 @@ require_once(dirrecursos . 'funciones.php');
 require_once(dirrecursos . 'accesibilidadweb.php');
 
 //Creamos sesión y una conexión con la base de datos.
-
 session_start();
-require_once('conexion.php');
+require_once('conexionbd.php');
+
+// Si la sesión está vacía
+if (!isset($_SESSION['usuario'])) {
+    header("location:index.php");
+}
+// echo '<pre>';
+// print_r($_SESSION['usuario']);
+// echo '</pre>';
+
+$usuario = $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'];
+$correoUsuario = $_SESSION['usuario']['email'];
+$tipoUsuario = $_SESSION['usuario']['tipoUsuario'];
+
+$cedula = $_SESSION['usuario']['cedula'];
+$nombre = $_SESSION['usuario']['nombre'];
+$apellido = $_SESSION['usuario']['apellido'];
+$telefono = $_SESSION['usuario']['telefono'];
 
 // Mostrar La Descripcion De La Tabla
 // $tabla = "transaccion";
@@ -56,8 +72,8 @@ if (isset($_SESSION['articulos'])) {
 <body>
 
     <?php
-	
-	require_once(dirvista . 'bodyelementos.php');
+
+    require_once(dirvista . 'bodyelementos.php');
     require_once(dirvista . 'navbarprincipal.php');
 
     ?>
@@ -80,7 +96,7 @@ if (isset($_SESSION['articulos'])) {
 
             <div class="input-field col s6 m6 l6" id="botonContinuarCompra">
 
-                <a class="waves-effect waves-light btn orange btnModal" href="index.php">
+                <a class="waves-effect waves-light btn orange btnModal" href="iniciousuario.php">
 
                     <i class="material-icons right" style="color: white;">home</i>AGREGAR OTRO EVENTO
 
@@ -124,12 +140,12 @@ if (isset($_SESSION['articulos'])) {
 
                     <br>
 
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m12 l12">
 
                         <i class="material-icons prefix">account_circle</i>
 
                         <input class="color" maxlength="10" placeholder=" Ingrese la Identificación"
-                            name="cedula" type="text" id="cedula" data-length="10" onkeypress="return soloNumeros1(event)" required />
+                            name="cedula" type="text" id="cedula" value="<?= $cedula ?>" readonly data-length="10" onkeypress="return soloNumeros1(event)" required />
 
                         <label class="titulo" style="font-size:12pt;" for="cedula">Cedula</label>
 
@@ -140,10 +156,10 @@ if (isset($_SESSION['articulos'])) {
                         <i class="material-icons prefix">assignment_ind</i>
 
                         <input class="color" maxlength="25" placeholder=" Ingrese el nombre / los nombres"
-                            name="nombre" type="text" id="nombre" data-length="25" onkeypress="return soloLetras(event)" required>
+                            name="nombre" type="text" id="nombre" value="<?= $nombre ?>" readonly data-length="25" onkeypress="return soloLetras(event)" required>
 
                         <label class="titulo" style="font-size:12pt;" for="nombre">Nombre</label>
-
+                        
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -151,7 +167,7 @@ if (isset($_SESSION['articulos'])) {
                         <i class="material-icons prefix">assignment_ind</i>
 
                         <input class="color" maxlength="25" placeholder=" Ingrese el apellido / los apellidos"
-                            name="apellidos" type="text" id="apellidos" data-length="25" onkeypress="return soloLetras(event)" required>
+                            name="apellidos" type="text" id="apellidos" value="<?= $apellido ?>" readonly data-length="25" onkeypress="return soloLetras(event)" required>
 
                         <label class="titulo" style="font-size:12pt;" for="apellidos">Apellido</label>
 
@@ -162,7 +178,7 @@ if (isset($_SESSION['articulos'])) {
                         <i class="material-icons prefix">local_phone</i>
 
                         <input class="color" maxlength="10" placeholder=" Ingrese el telefono"
-                            name="telefono" type="text" id="telefono" data-length="10" onkeypress="return soloNumeros1(event)" required>
+                            name="telefono" type="text" id="telefono" value="<?= $telefono ?>" readonly data-length="10" onkeypress="return soloNumeros1(event)" required>
 
                         <label class="titulo" style="font-size:12pt;" for="telefono">Teléfono</label>
 
@@ -173,7 +189,7 @@ if (isset($_SESSION['articulos'])) {
                         <i class="material-icons prefix">email</i>
 
                         <input class="color validate" maxlength="30" placeholder=" Ingrese el correo"
-                            name="email" type="email" id="email" data-length="30" required>
+                            name="email" type="email" id="email" value="<?= $correoUsuario ?>" readonly data-length="30" required>
 
                         <label class="titulo" style="font-size:12pt;" for="email">Correo Electronico</label>
 
@@ -185,9 +201,9 @@ if (isset($_SESSION['articulos'])) {
 
                         <select name="tipoDePago" style="background-color: white;" required>
 
-                            <option value="" disabled selected> Seleccione el tipo de Pago</option>
-                            <option value="Efectivo">Efectivo</option>
-                            <option value="Tarjeta">Tarjeta</option>
+                            <option value="" disabled > Seleccione el tipo de Pago</option>
+                            <!-- <option value="Efectivo">Efectivo</option> -->
+                            <option value="Tarjeta" selected>Tarjeta</option>
 
                         </select>
 
@@ -195,7 +211,16 @@ if (isset($_SESSION['articulos'])) {
 
                     </div>
 
+                    <div class="input-field col s12 m6 l6">
 
+                        <i class="material-icons prefix">payment</i>
+
+                        <input class="color" maxlength="10" placeholder=" Ingrese el numero de tarjeta"
+                            name="numeroDeTarjeta" type="text" id="numeroDeTarjeta" data-length="10" onkeypress="return soloNumeros1(event)" required />
+
+                        <label class="titulo" style="font-size:12pt;" for="numeroDeTarjeta">Numero De Tarjeta</label>
+
+                    </div>
 
                     <div class="input-field col s12 m10 l8" style="margin-left: 20px;">
 
@@ -205,7 +230,7 @@ if (isset($_SESSION['articulos'])) {
 
                         </button> &nbsp; &nbsp;
 
-                        <a class="waves-effect waves-light btn red" href="#" id="btnLimpiar"><i class="material-icons right" style="color: white;">send</i>Limpiar Formulario</a>
+                        <!-- <a class="waves-effect waves-light btn red" href="#" id="btnLimpiar"><i class="material-icons right" style="color: white;">send</i>Limpiar Formulario</a> -->
                     </div>
 
                 </div>
@@ -277,57 +302,57 @@ require_once(dirvista . 'piedepagina.php');
 
         });
 
-        $('#cedula').on('input', function() {
+        // $('#cedula').on('input', function() {
 
-            var bus = $(this);
+        //     var bus = $(this);
 
-            if (validarInput(bus, "Por favor ingrese la cedula")) {} else {
+        //     if (validarInput(bus, "Por favor ingrese la cedula")) {} else {
 
-                var cedula = "buscar=" + bus.val().trim();
+        //         var cedula = "buscar=" + bus.val().trim();
 
-                $.ajax({
+        //         $.ajax({
 
-                    type: "POST",
-                    url: "<?= dircar ?>cargarcliente.php",
-                    data: cedula,
-                    dataType: "json", // Esperamos un JSON de respuesta
+        //             type: "POST",
+        //             url: "<?= dircar ?>cargarcliente.php",
+        //             data: cedula,
+        //             dataType: "json", // Esperamos un JSON de respuesta
 
-                    success: function(data) {
+        //             success: function(data) {
 
-                        if (data.error) {
+        //                 if (data.error) {
 
-                            $('#resp').html(data.error).addClass('colorClaro'); // Mostrar error si no se encuentra el cliente
+        //                     $('#resp').html(data.error).addClass('colorClaro'); // Mostrar error si no se encuentra el cliente
 
-                            // Limpiar campos del formulario
+        //                     // Limpiar campos del formulario
 
-                            $('#nombre').val("");
-                            $('#apellidos').val("");
-                            $('#direccion').val("");
-                            $('#telefono').val("");
-                            $('#email').val("");
+        //                     $('#nombre').val("");
+        //                     $('#apellidos').val("");
+        //                     $('#direccion').val("");
+        //                     $('#telefono').val("");
+        //                     $('#email').val("");
 
-                        } else {
+        //                 } else {
 
-                            $('#resp').html("").removeAttr('class');
-                            $('#nombre').val(data.nombre);
-                            $('#apellidos').val(data.apellido);
-                            $('#direccion').val(data.direccion);
-                            $('#telefono').val(data.telefono);
-                            $('#email').val(data.email);
-                        }
-                    },
+        //                     $('#resp').html("").removeAttr('class');
+        //                     $('#nombre').val(data.nombre);
+        //                     $('#apellidos').val(data.apellido);
+        //                     $('#direccion').val(data.direccion);
+        //                     $('#telefono').val(data.telefono);
+        //                     $('#email').val(data.email);
+        //                 }
+        //             },
 
-                    error: function(jqXHR, textStatus, errorThrown) {
+        //             error: function(jqXHR, textStatus, errorThrown) {
 
-                        $('#resp').html("Error al buscar cliente. Inténtalo de nuevo.");
+        //                 $('#resp').html("Error al buscar cliente. Inténtalo de nuevo.");
 
-                    }
+        //             }
 
-                });
+        //         });
 
-            }
+        //     }
 
-        });
+        // });
 
     });
 </script>

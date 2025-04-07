@@ -1,6 +1,6 @@
 <?php
 
-    require_once('conexion.php');
+    require_once('conexionbd.php');
 
 
 
@@ -16,7 +16,7 @@
 
     // $tabla = "boleto";
 
-    // require_once('descripciondelatabla.php');  // Mostrar La Descripcion De La Tabla
+    // require_once(dirrecursos .'descripciondelatabla.php');  // Mostrar La Descripcion De La Tabla
 
 
 

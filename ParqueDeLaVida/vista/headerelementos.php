@@ -10,3 +10,5 @@
 <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 <!-- css diseño de la pagina -->
 <link type="text/css" href="css/estilos.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>

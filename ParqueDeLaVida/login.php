@@ -1,40 +1,32 @@
 <?php
 require_once('path.php');
 require_once(dirrecursos . 'funciones.php');
-require_once(dirrecursos .'accesibilidadweb.php');
+require_once(dirrecursos . 'accesibilidadweb.php');
 
-//Creamos sesión y una conexión con la base de datos.
+//Conexión con la base de datos.
 session_start();
-require_once('conexion.php');
+require_once('conexionbd.php');
 
 // Mostrar La Descripcion De La Tabla
 // $tabla = "transaccion";
 // require_once(dirrecursos.'descripciondelatabla.php');  
 
-//Comprobamos que la variable $productos tenga valor.
-
+//Creamos la Sesion articulos que va almacenar los productos.
 if (isset($_SESSION['articulos'])) {
 
     $productos = $_SESSION['articulos'];
-
     if (count($productos) > 0) {
 
         $cantidadProductos = count($productos);
-
     } else {
 
         $cantidadProductos = "";
-
     }
-
 } else {
 
     $productos = false;
-
     $cantidadProductos = "";
-
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -48,182 +40,141 @@ if (isset($_SESSION['articulos'])) {
     <title>Login</title>
 </head>
 
+<style>
+    body {
+        background: url(recursos/sesion/login.png);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #F1F1F1;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+    .input-field input[type=date]:focus+label,
+    .input-field input[type=text]:focus+label,
+    .input-field input[type=txt_uname_email]:focus+label,
+    .input-field input[type=password]:focus+label {
+        color: #e91e63;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=txt_uname_email]:focus,
+    .input-field input[type=password]:focus {
+        border-bottom: 2px solid #e91e63;
+        box-shadow: none;
+    }
+
+    .color {
+        background: rgba(0, 0, 0, .2);
+    }
+
+    i.material-icons,
+    label.blanco {
+        color: white;
+    }
+
+    h5 {
+        color: white;
+        text-align: justify;
+    }
+
+    div.row div.input-field input {
+        size: 35;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 21px;
+        line-height: 3;
+        color: white;
+    }
+
+    button {
+        font-size: 26px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*Pintar checkbok*/
+    [type="checkbox"]+label:before,
+    [type="checkbox"]:not(.filled-in)+label:after {
+        border: 2px solid black;
+    }
+</style>
+
 <body>
 
     <?php
-
     require_once(dirvista . 'bodyelementos.php');
-    require_once(dirvista . 'navbarprincipal.php');
-
+    require_once(dirvista . 'navbarinicio.php');
     ?>
 
+    <main>
+        <center>
+            <div class="section"></div>
+            <div id="container">
+                <!-- <h3 style="color: #D35400">CaiceTravel</h3> -->
 
+                <div class="color" style="display: inline-block; padding: 0px 39px 0px 39px;">
+                    <form class="col s12 m12 l12" name="Ingresar" 
+                    action="<?= dirsesion ?>manejadorsesiones.php" method="post">
 
-        <div class="container">
+                        <h3 style="color: #FFD700">Iniciar sesión</h3>
 
-            <h4 class="colorClaro">Bienvenido(a):</h4>
 
-        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input placeholder="&#128272; Ingrese usuario o email" name="txt_uname_email" type="email" class="validate" style="color:white;font-size:15pt;" size="35" required>
+                                <label class="blanco" style="font-size:16pt;" for="txt_uname_email">Usuario</label>
+                            </div>
+                        </div>
 
+                        <div class='row'>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input placeholder="&#128272; Digite password" id="password" name="txt_password" type="password" class="validate" style="color:white;font-size:15pt;" size="35" required>
+                                <label class="blanco" style="font-size:16pt;" for="txt_password">Contraseña</label>
+                            </div>
 
+                            <p class="justificar">
+                                <input name="VerPassword" id="VerPassword" type="checkbox" style="color:black;">
+                                <label class="blanco" style="font-size:13pt; background-color:#F1F1F1;; color:black;" for="VerPassword">Ver contraseña</label>
+                            </p
+                                </div>
 
-        <div class="container" style="border: 1px solid black; background-color: #1f3a28; padding: 20px;
+                            <div class="row">
+                                <button class="col s7 m8 l8 offset-s3 offset-m2 offset-l2 waves-effect waves-light btn-large  indigo darken-4" type="submit" name="btn-login">Ingresar
+                                </button>
+                            </div>
 
-    border-radius: 10px;">
+                            <h5>¡No tienes cuenta! <a style="color:#00FFFF" href="registrarcliente.php">Regístrate</a></h5>
 
-            <h5 style="margin-top: 0px; background-color: rgba(144, 238, 144, 0.5); 
+                            <div class="row">
 
-        padding: 5px; border-radius: 10px;">Iniciar Sesión</h5>
+                                <div class="col s7 m8 l8 offset-s3 offset-m2 offset-l2 " id="botonContinuarC">
 
-            <form class="formPedido col s12" id="formPedido" name="formLogin" method="post"
+                                    <a class="waves-effect waves-light btn green" href="index.php" style="font-size: 20px;">
+                                        Volver
+                                    </a>
 
-                action="<?=dircar?>enviarpedido.php">
+                                </div>
 
-                <div class="row">
+                            </div>
+                    </form>
 
-                    <div style="margin-left: 30px; color:black; text-align: justify; font-weight: bold; font-size: 16px;" id="resp"></div>
-
-
-
-                    <br>
-
-                    <div class="input-field col s8 m6 l6">
-
-                        <i class="material-icons prefix">account_circle</i>
-
-                        <input class="color" maxlength="10" placeholder=" Ingrese la Identificación"
-
-                            name="cedula" type="text" id="cedula" data-length="10" onkeypress="return soloNumeros1(event)" required />
-
-                        <label class="titulo" style="font-size:12pt;" for="cedula">Cedula</label>
-
-                    </div>
-
-
-
-                    <div class="input-field col s8 m6 l6">
-
-                        <i class="material-icons prefix">assignment_ind</i>
-
-                        <input class="color" maxlength="25" placeholder=" Ingrese el nombre / los nombres"
-
-                            name="nombre" type="text" id="nombre" data-length="25" onkeypress="return soloLetras(event)" required>
-
-                        <label class="titulo" style="font-size:12pt;" for="nombre">Nombre</label>
-
-                    </div>
-
-
-
-                    <div class="input-field col s8 m6 l6">
-
-                        <i class="material-icons prefix">assignment_ind</i>
-
-                        <input class="color" maxlength="25" placeholder=" Ingrese el apellido / los apellidos"
-
-                            name="apellidos" type="text" id="apellidos" data-length="25" onkeypress="return soloLetras(event)" required>
-
-                        <label class="titulo" style="font-size:12pt;" for="apellidos">Apellido</label>
-
-                    </div>
-
-
-
-                    <div class="input-field col s8 m6 l6">
-
-                        <i class="material-icons prefix">local_phone</i>
-
-                        <input class="color" maxlength="10" placeholder=" Ingrese el telefono"
-
-                            name="telefono" type="text" id="telefono" data-length="10" onkeypress="return soloNumeros1(event)" required>
-
-                        <label class="titulo" style="font-size:12pt;" for="telefono">Teléfono</label>
-
-                    </div>
-
-
-
-                    <div class="input-field col s8 m6 l6">
-
-                        <i class="material-icons prefix">email</i>
-
-                        <input class="color validate" maxlength="30" placeholder=" Ingrese el correo" name="email" type="email" id="email" data-length="30" required>
-
-                        <label class="titulo" style="font-size:12pt;" for="email">Correo Electronico</label>
-
-                    </div>
-
-
-
-                    <div class="input-field col s12 m10 l8" style="margin-left: 20px;">
-
-                        <button class="btn waves-effect waves-light indigo" id="Enviar" name="Enviar" name="Enviar">Pagar
-
-                            <i class="material-icons right" style="color: white;">send</i>
-
-                        </button> &nbsp; &nbsp;
-
-                        <a class="waves-effect waves-light btn red" href="#" id="btnLimpiar"><i class="material-icons right" style="color: white;">send</i>Limpiar Formulario</a>
-
-                    </div>
-
-
-
+                    <div class="section"></div>
                 </div>
-
-            </form>
-
-
-
-            <?php
-
-            $estado = "DeleteEnPedido";
-
-            require_once(dirvista . 'listaproductos.php');
-
-            ?>
-
-        </div>
-
-
-
-        <div class="container row">
-
-            <div class="input-field col s6 m6 l6" id="VerCarrito">
-
-                <a class="waves-effect waves-light btn indigo" href="vercarrito.php">
-
-                    <i class="material-icons right" style="color: white;">shopping_basket</i>VOLVER CARRITO DE COMPRA
-
-                </a>
-
             </div>
 
-            <div class="input-field col s6 m6 l6" id="botonContinuarCompra">
-
-                <a class="waves-effect waves-light btn orange btnModal" href="index.php">
-
-                    <i class="material-icons right" style="color: white;">home</i>AGREGAR COMPRA
-
-                </a>
-
-            </div>
-
-            <!-- <div class="input-field col s4 m4 l4" id="botonVerPedido">
-
-            <a class="waves-effect waves-light btn blue" href="verpedido.php">
-
-            <i class="material-icons right" style="color: white;">shopping_basket</i>VER PEDIDOS
-
-            </a>
-
-        </div> -->
-
-        </div>
+        </center>
+    </main>
 
 </body>
-
-
 
 <?php
 
@@ -231,110 +182,4 @@ require_once(dirvista . 'piedepagina.php');
 
 ?>
 
-
-
 </html>
-
-
-
-<script>
-
-    $(document).ready(function() {
-
-
-
-        //   M.textareaAutoResize($('#observaciones'));
-
-
-
-        $('#btnLimpiar').click(function(e) {
-
-            e.preventDefault(); // Prevenir el comportamiento por defecto del enlace
-
-
-
-            // Limpiar todos los campos del formulario
-
-            $('#formPedido')[0].reset();
-
-        });
-
-
-
-        $('#cedula').on('input', function() {
-
-
-
-            var bus = $(this);
-
-
-
-            if (validarInput(bus, "Por favor ingrese la cedula")) {} else {
-
-                var cedula = "buscar=" + bus.val().trim();
-
-
-
-                $.ajax({
-
-                    type: "POST",
-
-                    url: "<?= dircar ?>cargarcliente.php",
-
-                    data: cedula,
-
-                    dataType: "json", // Esperamos un JSON de respuesta
-
-                    success: function(data) {
-
-                        if (data.error) {
-
-                            $('#resp').html(data.error).addClass('colorClaro'); // Mostrar error si no se encuentra el cliente
-
-
-
-                            // Limpiar campos del formulario
-
-                            $('#nombre').val("");
-
-                            $('#apellidos').val("");
-
-                            $('#direccion').val("");
-
-                            $('#telefono').val("");
-
-                            $('#email').val("");
-
-                        } else {
-
-                            $('#resp').html("").removeAttr('class');
-
-                            $('#nombre').val(data.nombre);
-
-                            $('#apellidos').val(data.apellido);
-
-                            $('#direccion').val(data.direccion);
-
-                            $('#telefono').val(data.telefono);
-
-                            $('#email').val(data.email);
-
-                        }
-
-                    },
-
-                    error: function(jqXHR, textStatus, errorThrown) {
-
-                        $('#resp').html("Error al buscar cliente. Inténtalo de nuevo.");
-
-                    }
-
-                });
-
-            }
-
-        });
-
-    });
-
-</script>

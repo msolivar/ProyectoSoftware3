@@ -1,0 +1,107 @@
+[01-Apr-2025 23:38:58 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/lkkxjgdf/public_html/conexion.php on line 9
+[01-Apr-2025 18:41:49 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on boolean in /home/lkkxjgdf/public_html/index.php:190
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/index.php on line 190
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:11 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:32:29 America/Bogota] PHP Notice:  Undefined index: correo in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 19:38:50 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[01-Apr-2025 22:29:25 America/Bogota] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/lkkxjgdf/public_html/vista/listaproductos.php on line 31
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:25:01 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:12 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 00:26:27 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listaPedido.php on line 115
+[02-Apr-2025 09:56:55 UTC] PHP Parse error:  syntax error, unexpected token ";" in /home/lkkxjgdf/public_html/verpedido.php on line 111
+[02-Apr-2025 09:58:03 UTC] PHP Parse error:  syntax error, unexpected token ";" in /home/lkkxjgdf/public_html/verpedido.php on line 111
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:13 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 11:10:17 America/Bogota] PHP Warning:  foreach() argument must be of type array|object, bool given in /home/lkkxjgdf/public_html/vista/listaproductos.php on line 61
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:58:06 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 19:58:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "pdfs" in /home/lkkxjgdf/public_html/pdf1.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/pdf1.php on line 63
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 14:59:59 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 15:00:14 America/Bogota] PHP Warning:  Undefined array key "correo" in /home/lkkxjgdf/public_html/vista/listapedido.php on line 229
+[02-Apr-2025 20:00:16 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "pdfs" in /home/lkkxjgdf/public_html/pdf1.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/pdf1.php on line 63
