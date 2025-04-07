@@ -1,0 +1,28 @@
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $cedula in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 42
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $nombre in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 43
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $apellidos in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 44
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $nombre in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 45
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $apellidos in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 45
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $telefono in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 46
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $email in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 47
+[02-Apr-2025 18:32:48 America/Bogota] PHP Warning:  Undefined variable $tipoDePago in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 48
+[04-Apr-2025 06:15:11 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php:97
+Stack trace:
+#0 /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php(97): mysqli->query()
+#1 {main}
+  thrown in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 97
+[04-Apr-2025 06:18:52 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php:97
+Stack trace:
+#0 /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php(97): mysqli->query()
+#1 {main}
+  thrown in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 97
+[04-Apr-2025 06:20:17 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php:97
+Stack trace:
+#0 /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php(97): mysqli->query()
+#1 {main}
+  thrown in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 97
+[04-Apr-2025 06:21:32 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php:97
+Stack trace:
+#0 /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php(97): mysqli->query()
+#1 {main}
+  thrown in /home/lkkxjgdf/public_html/metodoscarrito/enviarpedido.php on line 97
