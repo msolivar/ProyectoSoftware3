@@ -1,16 +1,20 @@
 <?php
+
 // Archivo: conexion.php
 
+//Servidor
 $host = 'localhost'; // Cambiar si es necesario
-$usuario = 'root'; // Cambiar según configuración
-$clave = ''; // Cambiar según configuración
-$base_datos = 'parquedelavida'; // Cambiar por el nombre real de la BD
+$usuario = 'lkkxjgdf_admin'; // Cambiar según configuración
+$clave = '6I(;%g;(DBnK'; // Cambiar según configuración
+$base_datos = 'lkkxjgdf_parquedelavida'; // Cambiar por el nombre real de la BD
 
 $conexion = new mysqli($host, $usuario, $clave, $base_datos);
 
 // Verificar si hay errores en la conexión
 if ($conexion->connect_error) {
+
     die("Error en la conexión a la base de datos: " . $conexion->connect_error);
+
 }
 
 // Establecer codificación de caracteres
@@ -29,3 +33,4 @@ $fecha_colombia = date('d-m-Y H:i:s'); // Ejemplo: "23-03-2025 15:30:00"
 // echo "Fecha y hora en Colombia: $fecha_colombia";
 
 ?>
+

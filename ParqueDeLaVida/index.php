@@ -1,12 +1,14 @@
 <?php
+
 require_once('path.php');
-require_once(dirRecursos.'funciones.php');
+require_once(dirrecursos . 'funciones.php');
+require_once(dirrecursos . 'accesibilidadweb.php');
 
 session_start();
 require_once('conexion.php');
 
 // $tabla = "boleto";
-// require_once('descripcionDeLaTabla.php');  // Mostrar La Descripcion De La Tabla
+// require_once('descripciondelatabla.php');  // Mostrar La Descripcion De La Tabla
 
 // Monto Total Venta En Caja Sin Pagar
 // $qry = $conexion->query("SELECT SUM(precio*disponibles) AS totalVentas FROM boleto");
@@ -15,27 +17,30 @@ require_once('conexion.php');
 
 //Calcular Las Transaciones de las facturas
 // $consulta = "SELECT factura_id, SUM(precio * cantidad) AS total_boletos FROM transaccion GROUP BY factura_id ORDER BY factura_id DESC";
-
 // echo '<p class="colorClaro"> total Ventas En Caja: '.formatoMoneda($totalVentas).' </p>';
 
 //Creamos la Sesion articulos que va almacenar los productos.
-
 if (isset($_SESSION['articulos'])) {
+
   $productos = $_SESSION['articulos'];
-  if(count($productos)>0){
+  if (count($productos) > 0) {
+
     $cantidadProductos = count($productos);
-  } else{
+  } else {
+
     $cantidadProductos = "";
   }
-  
 } else {
+
   $productos = false;
   $cantidadProductos = "";
 }
 
-// echo "<pre>";
-// print_r($productos);
-// echo "</pre>";
+//echo "<pre>";
+//
+//print_r($productos);
+//
+//echo "</pre>";
 
 $consulta = "
     SELECT *, 
@@ -55,37 +60,23 @@ $consulta = "
     FROM boleto 
     WHERE id > 1
     ";
+
 $qry = $conexion->query($consulta);
+
 ?>
 
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Parque de la Vida</title>
-  <!--etiqueta para codificar el idioma-->
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- etiqueta para controlar el zoom en dispositovs moviles -->
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-  <!-- css diseño de la pagina -->
-  <link type="text/css" href="css/estilos.css" rel="stylesheet" type="text/css" media="screen" />
-  <style>
-    .header-container {
-      display: flex;
-      justify-content: center;
-      /* Centrar horizontalmente */
-      align-items: center;
-      /* Centrar verticalmente */
-      gap: 20px;
-      /* Espaciado entre secciones */
-    }
 
+  <?php
+  require_once(dirvista . 'headerelementos.php');
+  ?>
+  <title>Parque de la Vida</title>
+
+  <style>
     .col {
       text-align: center;
       /* Centrar texto dentro de cada columna */
@@ -109,7 +100,6 @@ $qry = $conexion->query($consulta);
       border-radius: 20px;
       text-decoration: none;
       width: fit-content;
-
     }
 
     .btn-comprar {
@@ -139,6 +129,7 @@ $qry = $conexion->query($consulta);
       display: flex;
       flex-direction: column;
       height: 100%;
+      background-color: papayawhip;
     }
 
     .card-content {
@@ -167,21 +158,39 @@ $qry = $conexion->query($consulta);
       display: flex;
       justify-content: center;
       /* Centra horizontalmente */
+    }
 
+    @media screen and (max-width: 1500px) {
+      .header-container {
+        display: flex;
+        justify-content: center;
+        /* Centrar horizontalmente */
+        align-items: center;
+        /* Centrar verticalmente */
+        gap: 20px;
+        /* Espaciado entre secciones */
+      }
+
+      @media screen and (max-width: 600px) {
+        .header-container {
+          display: block;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        }
+      }
     }
   </style>
+
 </head>
 
-<body class="black-text">
-
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <!-- js para mostrar la contraseña -->
-  <script type="text/javascript" src="js/mostrarcontraseña.js"></script>
+<body>
 
   <?php
-  require_once(dirVista.'NavBarPrincipal.php');
+
+  require_once(dirvista . 'bodyelementos.php');
+  require_once(dirvista . 'navbarprincipal.php');
+
   ?>
 
   <?php
@@ -192,20 +201,23 @@ $qry = $conexion->query($consulta);
   $evento = empty($row['evento']) ? "Null" : $row['evento'];
   $precio = empty($row['precio']) ? "Null" : $row['precio'];
   $aforo = empty($row['disponibles']) ? 0 : $row['disponibles'];
+
   ?>
 
   <br>
 
   <div class="container">
     <div class="header-container">
-      <div class="col s12 m6 l6">
+      <div class="col s6 m6 l6">
         <h3 class="center-align">
           <b>BIENVENIDO<br>
             AL PARQUE DE LA VIDA</b>
         </h3>
+
         <p class="center-align"><b><?= $fecha_colombia ?></b></p>
       </div>
-      <div class="col s12 m6 l6">
+
+      <div class="col s6 m6 l6">
         <img src="recursos\eventos\koala.jpg" class="imagenes" alt="Koala">
         <br>
         <!-- <a href="entrada.php?&entrada=1" class="btn-entrada">Entradas Aquí</a> -->
@@ -213,6 +225,7 @@ $qry = $conexion->query($consulta);
         <?php
         if ($aforo == !0) {
         ?>
+
           <!-- Botón para abrir el modal -->
           <a class="waves-effect waves-light btn orange btnModal" href="#modalPago"
             data-entrada="<?= $evento ?>"
@@ -221,11 +234,14 @@ $qry = $conexion->query($consulta);
           </a>
 
         <?php
+
         }
+
         ?>
 
       </div>
     </div>
+
     <p class="center-align" style="font-size: 24px;">Descubre un oasis natural donde la fauna y la flora se encuentran en armonía.<br>
       Explora senderos mágicos y conoce especies fascinantes.</p>
   </div>
@@ -233,8 +249,10 @@ $qry = $conexion->query($consulta);
   <div class="container #eeeeee grey lighten-3">
     <h4 class="center-align">EVENTOS</h4>
     <div class="row">
+
       <?php
       while ($row = $qry->fetch_array(MYSQLI_ASSOC)) {
+
         $evento = empty($row['evento']) ? "Null" : $row['evento'];
         $imagenEvento = empty($row['imagenEvento']) ? "Null" : $row['imagenEvento'];
         $fechaEvento = empty($row['fechaEvento']) ? "Null" : $row['fechaEvento'];
@@ -242,15 +260,21 @@ $qry = $conexion->query($consulta);
         $entrada = empty($row['id']) ? "Null" : $row['id'];
         $precio = empty($row['precio']) ? "Null" : $row['precio'];
         $aforo = empty($row['disponibles']) ? 0 : $row['disponibles'];
+
       ?>
+
         <?php
+
         if ($aforo == !0) {
+
         ?>
+
           <div class="col s6 m4 l3">
             <div class="card">
               <div class="card-image">
                 <img src="<?= $imagenEvento ?>" alt="<?= $evento ?>">
               </div>
+
               <div class="card-content">
                 <span class="card-title"><?= $evento ?></span>
                 <p><b>Fecha Ingreso:</b> <?= $fechaEvento ?></p>
@@ -262,10 +286,13 @@ $qry = $conexion->query($consulta);
                   data-precio="<?= $precio ?>">
                   Comprar Entrada
                 </a>
+
               </div>
             </div>
           </div>
+
       <?php
+
         }
       } //Fin del while
 
@@ -273,10 +300,12 @@ $qry = $conexion->query($consulta);
       $conexion->close();
       ?>
     </div>
+
   </div>
 
   <!-- Modal Structure -->
   <div id="modalPago" class="modal">
+
     <!-- Botón para cerrar -->
     <div class="modal-footer">
       <a href="#!" id="btnCerrarModal" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
@@ -285,7 +314,7 @@ $qry = $conexion->query($consulta);
     <div class="modal-content">
       <h4>Detalles de la Compra</h4>
 
-      <form action="<?=dirCar?>agregacar.php" method="post">
+      <form action="<?= dircar ?>agregacar.php" method="post">
         <div class="table-responsive mt-4">
           <table class="table text-black"> <!-- Cambié text-white a text-black para visibilidad -->
             <thead>
@@ -307,20 +336,24 @@ $qry = $conexion->query($consulta);
                   <input readonly type="text" name="detalleEntrada" id="detalleEntrada" class="form-control"
                     placeholder="Entrada" required>
                 </td>
+
                 <td>
                   <input readonly type="text" name="precioEntrada" id="precioEntrada" class="form-control"
                     placeholder="Precio Entrada" required>
                 </td>
+
                 <td>
                   <input type="number" class="color" name="cantidad" id="cantidad" onkeypress="return soloNumeros(event)"
                     placeholder="Cantidad" value="1" min="1" max="99" required>
                 </td>
+
                 <td>
                   <input readonly type="text" id="totalPagar" name="totalPagar" class="form-control"
                     placeholder="Total a Pagar" required>
                 </td>
               </tr>
             </tbody>
+
           </table>
         </div>
 
@@ -329,6 +362,7 @@ $qry = $conexion->query($consulta);
             <i class="material-icons" style="color:white;">shopping_cart</i>
             RESERVAR EVENTO</button>
         </div>
+
       </form>
     </div>
   </div>
@@ -336,12 +370,39 @@ $qry = $conexion->query($consulta);
 </body>
 
 <?php
-require_once(dirVista.'pieDePagina.php');
+require_once(dirvista . 'piedepagina.php');
 ?>
 
 <script>
+  //Liberar Carrito
+
+  // Función para liberar la sección llamando al servidor
+  //  function liberarSeccion() {
+  //
+  //    fetch('liberar.php') // Petición a PHP
+  //
+  //      .then(response => response.json()) // Convertir respuesta a JSON
+  //
+  //      .then(data => {
+  //
+  //        document.getElementById('estado').innerText = data.mensaje; // Actualizar estado
+  //
+  //      })
+  //
+  //      .catch(error => console.error('Error:', error));
+  //
+  //  }
+  //
+  //
+  //
+  //  // Esperar 3 segundos y luego liberar la sección
+  //
+  //  setTimeout(liberarSeccion, 3000);
+
   //Ingresar soloNumeros
+
   function soloNumeros(event) {
+
     let tecla = event.key;
     let input = event.target;
 
@@ -356,6 +417,7 @@ require_once(dirVista.'pieDePagina.php');
     }
 
     return true; // Permite la entrada válida
+
   }
 
   // Inicializar elementos de Materialize si es necesario
@@ -383,43 +445,55 @@ require_once(dirVista.'pieDePagina.php');
 
     //Reiniciar Cantidad si da click en el boton CerrarModal
     var cantidadInput = document.getElementById('cantidad');
-
+    
     document.getElementById('btnCerrarModal').addEventListener('click', function() {
       cantidadInput.value = 1; // Reiniciar cantidad
     });
 
     // Observar cambios en los atributos del modal
     var modal = document.getElementById('modalPago');
-
     var observer = new MutationObserver(function(mutations) {
+
       mutations.forEach(function(mutation) {
+
         if (mutation.attributeName === "style") {
+
           var displayValue = window.getComputedStyle(modal).display;
+
           if (displayValue === "none") {
+
             cantidadInput.value = 1; // Reinicia la cantidad a 1
+
             // document.getElementById('totalPagar').value = ''; // Limpia el total a pagar
+
           }
         }
       });
+
     });
 
     // Iniciar la observación de cambios en los atributos del modal
     observer.observe(modal, {
       attributes: true
     });
+
   });
 
   // Or with jQuery
   $(document).ready(function() {
+
     $('.modal').modal();
 
     $('#cantidad').on('input', function() {
+
       let cantidadStr = document.getElementById('cantidad').value;
 
       // Eliminar ceros iniciales si hay más de un dígito
       if (/^0[0-9]+/.test(cantidadStr)) {
+
         cantidadStr = cantidadStr.replace(/^0+/, ''); // Quita ceros iniciales
         document.getElementById('cantidad').value = cantidadStr || 1; // Si queda vacío, pone 1
+
       }
 
       let cantidad = parseInt(cantidadStr) || 0; // Convertir a número entero
@@ -432,7 +506,7 @@ require_once(dirVista.'pieDePagina.php');
 
       // Calcular el total
       let total = cantidad * precio;
-      document.getElementById('totalPagar').value = "$ "+total;
+      document.getElementById('totalPagar').value = "$ " + total;
     });
   });
 </script>

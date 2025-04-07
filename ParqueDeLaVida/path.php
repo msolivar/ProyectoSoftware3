@@ -1,21 +1,53 @@
 <?php
-define('BASE', rtrim(__DIR__, '/') . '/'); // Ruta base del proyecto
+
+define('base', rtrim(__DIR__, '/') . '/'); // Ruta base del proyecto
+
+
 
 //RutaDinamica
-// define('dirDina', BASE . 'vista/');
 
-//recurso Funciones y Descripcion Tabla
-define('dirRecursos',  'recursos/');
+// define('dirdina', base . 'vista/');
 
-//cargar vista tablas
-define('dirVista', 'vista/');
 
-define('dirCar', 'metodosCarrito/');
 
-define('dirPDF','TCPDF/tcpdf.php');
+//recurso Funciones y Descripcion atributos de Tabla en mysql
+
+define('dirrecursos',  'recursos/');
+
+
+
+//cargar vista tablas, Navegacion, Pie de pagina
+
+define('dirvista', 'vista/');
+
+
+
+//carrito de compra
+
+define('dircar', 'metodoscarrito/');
+
+
+
+//libreria pdf
+
+define('dirpdf','libpdf/tcpdf.php');
+
+
+
 //Se Implementan PDFS Asi
-// require_once('path.php');
-// require_once(dirPDF);
 
-// echo dirRecursos;
+// require_once('path.php');
+
+// require_once(dirpdf);
+
+
+
+//sesion
+
+define('dirsesion','metodosesion/');
+
+
+
+// echo dirrecursos;
+
 ?>
