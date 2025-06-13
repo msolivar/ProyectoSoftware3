@@ -46,7 +46,7 @@ if (isset($_SESSION['articulos'])) {
         background-size: 100% 100%;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-color: #F1F1F1;
+        background-color: lavender;
     }
 
     main {

@@ -2,13 +2,14 @@
 <dwsync>
 <file name="actualizarCantidadSolicitada.php" server="170.10.162.251/public_html/" local="133880272410911395" remote="133880757000000000" Dst="0" />
 <file name="actualizarEstadoPedido.php" server="170.10.162.251/public_html/" local="133880272413836150" remote="133880757000000000" Dst="0" />
-<file name="agregacar.php" server="170.10.162.251/public_html/" local="133883971806023713" remote="133884260400000000" Dst="0" />
+<file name="agregacar.php" server="170.10.162.251/public_html/" local="133926964784709710" remote="133927257000000000" Dst="0" />
 <file name="borraCar.php" server="170.10.162.251/public_html/" local="133880272417778561" remote="133880757000000000" Dst="0" />
-<file name="enviarpedido.php" server="170.10.162.251/public_html/" local="133885048402153196" remote="133885236600000000" Dst="0" />
-<file name="actualizarcantidadsolicitada.php" server="170.10.162.251/public_html/" local="133883971649791362" remote="133884260400000000" Dst="0" />
-<file name="actualizarestadopedido.php" server="170.10.162.251/public_html/" local="133883971718391743" remote="133884260400000000" Dst="0" />
-<file name="borracar.php" server="170.10.162.251/public_html/" local="133883299808764174" remote="133884260400000000" Dst="0" />
-<file name="cargarcliente.php" server="170.10.162.251/public_html/" local="133883971891191971" remote="133884260400000000" Dst="0" />
-<file name="error_log" server="170.10.162.251/public_html/" local="133882572600000000" remote="133882572600000000" Dst="0" />
-<file name="enviarpedidobackup.php" server="170.10.162.251/public_html/" local="133885048372691913" remote="133885236600000000" Dst="0" />
+<file name="enviarpedido.php" server="170.10.162.251/public_html/" local="133926964788185800" remote="133927257000000000" Dst="0" />
+<file name="actualizarcantidadsolicitada.php" server="170.10.162.251/public_html/" local="133926964777336157" remote="133927257000000000" Dst="0" />
+<file name="actualizarestadopedido.php" server="170.10.162.251/public_html/" local="133926964783614286" remote="133927257000000000" Dst="0" />
+<file name="borracar.php" server="170.10.162.251/public_html/" local="133926964781672023" remote="133927257000000000" Dst="0" />
+<file name="cargarcliente.php" server="170.10.162.251/public_html/" local="133926964785545853" remote="133927257000000000" Dst="0" />
+<file name="error_log" server="170.10.162.251/public_html/" local="133882572600000000" remote="133896617400000000" Dst="0" />
+<file name="enviarpedidobackup.php" server="170.10.162.251/public_html/" local="133926964788269152" remote="133927257000000000" Dst="0" />
+<file name="cargarciente.php" server="170.10.162.251/public_html/" local="133885316257339977" remote="133896617400000000" Dst="0" />
 </dwsync>

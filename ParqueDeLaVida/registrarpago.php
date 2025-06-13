@@ -43,9 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         body {
 
-            background-color: #2d4739;
+            background-color: lavender;
 
-            color: white;
+            color: black;
 
         }
 

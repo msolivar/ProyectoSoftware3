@@ -4,7 +4,7 @@ require_once('../conexionbd.php');
 // Si la sesión está vacía
 session_start();
 if (!isset($_SESSION['usuario'])) {
-    header("location:index.php");
+    header("location:../index.php");
 }
 // echo '<pre>';
 // print_r($_SESSION['usuario']);
@@ -14,10 +14,7 @@ $usuario = $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido
 $correoUsuario = $_SESSION['usuario']['email'];
 $tipoUsuario = $_SESSION['usuario']['tipoUsuario'];
 
-$correo = $correoUsuario;
-
-$sql = "SELECT f.id as fid, token FROM factura as f INNER JOIN usuario as u ON u.id = f.usuario_id WHERE email='" . $correo . "'
-ORDER BY fechaRegistroPago DESC LIMIT 1";
+$sql = "SELECT f.id as fid, token FROM factura as f INNER JOIN usuario as u ON u.id = f.usuario_id WHERE email='" . $correoUsuario . "' ORDER BY fechaRegistroPago DESC LIMIT 1";
 
 $res = $conexion->query($sql);
 $row = $res->fetch_array();

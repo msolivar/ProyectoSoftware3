@@ -105,3 +105,5 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/lkkxjgdf/public_html/pdf1.php on line 63
+[25-May-2025 20:05:27 America/Bogota] PHP Warning:  Undefined variable $tipoUsuario in /home/lkkxjgdf/public_html/vista/navbarinicio.php on line 42
+[25-May-2025 20:05:27 America/Bogota] PHP Warning:  Undefined variable $tipoUsuario in /home/lkkxjgdf/public_html/vista/navbarinicio.php on line 48

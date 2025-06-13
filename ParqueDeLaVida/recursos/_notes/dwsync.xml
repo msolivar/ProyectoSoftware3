@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="descripcionDeLaTabla.php" server="170.10.162.251/public_html/" local="133880272435263076" remote="133880737200000000" Dst="0" />
-<file name="funciones.php" server="170.10.162.251/public_html/" local="133884033641180341" remote="133884260400000000" Dst="0" />
+<file name="funciones.php" server="170.10.162.251/public_html/" local="133926278375630619" remote="133926505200000000" Dst="0" />
 <file name="btBorrar.png" server="170.10.162.251/public_html/" local="133162077036325506" remote="133880454600000000" Dst="0" />
 <file name="btEnviarPedido.png" server="170.10.162.251/public_html/" local="133162001602787804" remote="133880454600000000" Dst="0" />
 <file name="Productos.png" server="170.10.162.251/public_html/" local="133162133160000000" remote="133880454600000000" Dst="0" />
 <file name="descripciondelatabla.php" server="170.10.162.251/public_html/" local="133880272435263076" remote="133880763600000000" Dst="0" />
 <file name="generarcodigo.php" server="170.10.162.251/public_html/" local="133883972409107069" remote="133884260400000000" Dst="0" />
-<file name="qrtoken.php" server="170.10.162.251/public_html/" local="133883726010762505" remote="133884260400000000" Dst="0" />
-<file name="verificarcodigo.php" server="170.10.162.251/public_html/" local="133883972492028227" remote="133884260400000000" Dst="0" />
+<file name="qrtoken.php" server="170.10.162.251/public_html/" local="133896443399972959" remote="133896622800000000" Dst="0" />
+<file name="verificarcodigo.php" server="170.10.162.251/public_html/" local="133899242888640016" remote="133899423000000000" Dst="0" />
 <file name="accesibilidadweb.php" server="170.10.162.251/public_html/" local="133882317884280263" remote="133882548000000000" Dst="0" />
 <file name="check_status.php" server="170.10.162.251/public_html/" local="133882215254172743" remote="133882548000000000" Dst="0" />
 <file name="btPdf.png" server="170.10.162.251/public_html/" local="133883979994185818" remote="133884260400000000" Dst="0" />
 <file name="eliminarproducto.php" server="170.10.162.251/public_html/" local="133884277927180344" remote="133885236600000000" Dst="0" />
+<file name="danzaMusica.png" server="170.10.162.251/public_html/" local="133885316254271737" remote="133896617400000000" Dst="0" />
+<file name="avistamientoAves.png" server="170.10.162.251/public_html/" local="133885316254231620" remote="133896617400000000" Dst="0" />
+<file name="caminataNocturna.png" server="170.10.162.251/public_html/" local="133885316254271737" remote="133896617400000000" Dst="0" />
+<file name="koala.jpg" server="170.10.162.251/public_html/" local="133885316254412868" remote="133896617400000000" Dst="0" />
+<file name="mitoYLeyendas.png" server="170.10.162.251/public_html/" local="133885316254412868" remote="133896617400000000" Dst="0" />
+<file name="error_log" server="170.10.162.251/public_html/" local="133926964792684452" remote="133926779400000000" Dst="0" />
 </dwsync>

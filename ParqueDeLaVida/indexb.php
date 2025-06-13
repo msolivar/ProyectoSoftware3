@@ -74,7 +74,7 @@
 
             background-color: #2d4739;
 
-            color: white;
+            color: black;
 
         }
 

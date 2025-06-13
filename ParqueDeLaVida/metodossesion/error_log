@@ -1,0 +1,34 @@
+[24-May-2025 19:39:36 America/Bogota] PHP Warning:  require_once(path.php): Failed to open stream: No such file or directory in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[24-May-2025 19:39:36 America/Bogota] PHP Fatal error:  Uncaught Error: Failed opening required 'path.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[24-May-2025 19:42:42 America/Bogota] PHP Warning:  require_once(path.php): Failed to open stream: No such file or directory in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[24-May-2025 19:42:42 America/Bogota] PHP Fatal error:  Uncaught Error: Failed opening required 'path.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[24-May-2025 19:46:02 America/Bogota] PHP Warning:  require_once(path.php): Failed to open stream: No such file or directory in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[24-May-2025 19:46:02 America/Bogota] PHP Fatal error:  Uncaught Error: Failed opening required 'path.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[24-May-2025 19:46:07 America/Bogota] PHP Warning:  require_once(path.php): Failed to open stream: No such file or directory in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[24-May-2025 19:46:07 America/Bogota] PHP Fatal error:  Uncaught Error: Failed opening required 'path.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 3
+[25-May-2025 00:10:23 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined function enviarCorreo() in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 32
+[25-May-2025 00:29:15 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined function enviarCorreo() in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/lkkxjgdf/public_html/metodossesion/crearcuenta.php on line 32
+[25-May-2025 13:02:14 America/Bogota] PHP Warning:  Undefined variable $cedula in /home/lkkxjgdf/public_html/metodossesion/recuperarcuenta.php on line 8
+[25-May-2025 13:02:14 America/Bogota] PHP Warning:  Undefined variable $correoUsuario in /home/lkkxjgdf/public_html/metodossesion/recuperarcuenta.php on line 16
+[25-May-2025 13:05:51 America/Bogota] PHP Warning:  Undefined variable $cedula in /home/lkkxjgdf/public_html/metodossesion/recuperarcuenta.php on line 8
+[25-May-2025 13:05:51 America/Bogota] PHP Warning:  Undefined variable $correoUsuario in /home/lkkxjgdf/public_html/metodossesion/recuperarcuenta.php on line 16
+[25-May-2025 13:07:45 America/Bogota] PHP Warning:  Undefined variable $cedula in /home/lkkxjgdf/public_html/metodossesion/recuperarcuenta.php on line 8
+[25-May-2025 13:08:24 America/Bogota] PHP Warning:  Undefined variable $cedula in /home/lkkxjgdf/public_html/metodossesion/recuperarcuenta.php on line 8

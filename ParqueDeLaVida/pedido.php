@@ -122,9 +122,7 @@ if (isset($_SESSION['articulos'])) {
 
         </div>
 
-        <div class="container" style="border: 1px solid black; background-color: #1f3a28; padding: 20px;
-
-    border-radius: 10px;">
+        <div class="container" style="border: 1px solid black; background-color: antiquewhite; padding: 20px; border-radius: 10px;">
 
             <h5 style="margin-top: 0px; background-color: rgba(144, 238, 144, 0.5); 
 

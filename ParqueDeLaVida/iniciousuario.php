@@ -70,7 +70,9 @@ $consulta = "
     DATE_FORMAT(fechaIngreso, '%l:%i %p') AS horaIngresoEvento
     FROM boleto 
     WHERE id > 1
-    AND DATEDIFF('".$fecha_original."', DATE(fechaIngreso)) > 0";
+    AND DATEDIFF(DATE(fechaSalida),'".$fecha_original."') > 0";
+
+//echo $consulta;
 
 $qry = $conexion->query($consulta);
 

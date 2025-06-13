@@ -191,7 +191,7 @@ if (isset($_POST['btnActualizar'])) {
 
   </div>
 
-  <div class="container" style="border: 1px solid black; background-color: #1f3a28; padding: 20px;
+  <div class="container" style="border: 1px solid black; background-color: antiquewhite; padding: 20px;
 border-radius: 10px;">
 
     <h5 style="margin-top: 0px; background-color: rgba(144, 238, 144, 0.5); 
@@ -375,9 +375,8 @@ border-radius: 10px;">
             echo '<td class=espacio"><img class="materialboxed" data-caption="' . $fila['evento'] . '" width="80" height="70" src="' . $imagen . '"></td>';
             echo "<td><a class='btn-floating btn-small waves-effect waves-light green' title='Actualizar' href='productos.php?idActualizar=" . $fila['id'] . "'><i class='material-icons'>
                 update</i></a></td>";
-
             echo "<td><a class='btn-floating btn-small waves-effect waves-light red' title='Eliminar' href='recursos/eliminarproducto.php?idEliminar=" . $fila['id'] . "'><i class='material-icons'>
-                delete</i></a></td>";
+               delete</i></a></td>";
 
             echo "</tr>";
           }

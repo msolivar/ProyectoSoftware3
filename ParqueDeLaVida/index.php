@@ -54,10 +54,24 @@ $consulta = "
         END, ' ',
         DATE_FORMAT(fechaIngreso, '%e de %M')
     ) AS fechaEvento,
+    CONCAT(
+        CASE DAYOFWEEK(fechaSalida)
+            WHEN 1 THEN 'Domingo'
+            WHEN 2 THEN 'Lunes'
+            WHEN 3 THEN 'Martes'
+            WHEN 4 THEN 'Miércoles'
+            WHEN 5 THEN 'Jueves'
+            WHEN 6 THEN 'Viernes'
+            WHEN 7 THEN 'Sábado'
+        END, ' ',
+        DATE_FORMAT(fechaSalida, '%e de %M')
+    ) AS fechaDisponibilidad,
     DATE_FORMAT(fechaIngreso, '%l:%i %p') AS horaIngresoEvento
     FROM boleto 
     WHERE id > 1
-    AND DATEDIFF('".$fecha_original."', DATE(fechaIngreso)) > 0";
+    AND DATEDIFF(DATE(fechaSalida),'".$fecha_original."') > 0";
+
+//echo $consulta;
 
 $qry = $conexion->query($consulta);
 
@@ -250,6 +264,8 @@ $qry = $conexion->query($consulta);
         $evento = empty($row['evento']) ? "Null" : $row['evento'];
         $imagenEvento = empty($row['imagenEvento']) ? "Null" : $row['imagenEvento'];
         $fechaEvento = empty($row['fechaEvento']) ? "Null" : $row['fechaEvento'];
+        $fechaDisponiblidad = empty($row['fechaDisponibilidad']) ? "Null" : $row['fechaDisponibilidad'];
+        $stockEvento = empty($row['disponibles']) ? "Null" : $row['disponibles'];
         $horaIngresoEvento = empty($row['horaIngresoEvento']) ? "Null" : $row['horaIngresoEvento'];
         $entrada = empty($row['id']) ? "Null" : $row['id'];
         $precio = empty($row['precio']) ? "Null" : $row['precio'];
@@ -272,6 +288,8 @@ $qry = $conexion->query($consulta);
               <div class="card-content">
                 <span class="card-title"><?= $evento ?></span>
                 <p><b>Fecha Ingreso:</b> <?= $fechaEvento ?></p>
+                <p><b>Evento Disponibles hasta:</b> <?= $fechaDisponiblidad?></p>
+                <p><b>Asientos Disponibles:</b> <?= $stockEvento ?></p>
                 <p><b>Hora Entrada:</b> <?= $horaIngresoEvento ?></p>
 
                 <!-- Botón para abrir el modal -->

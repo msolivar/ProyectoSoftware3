@@ -77,7 +77,7 @@ if (isset($_POST['btnActualizar'])) {
   }
 
   body {
-    background-color: #F1F1F1;
+    background-color: lavender;
   }
 
   input,
@@ -105,8 +105,9 @@ if (isset($_POST['btnActualizar'])) {
 
   <br>
 
-  <div class="container"> <!-- container -->
-    <div class="row"> <!-- row -->
+  <div class="container" style="border: 1px solid black; background-color: antiquewhite; padding: 20px;
+border-radius: 10px;">
+    <div class="row">
 
       <form class="formProducto col s12 m12 l12" id="formProducto" name="formProducto" method="POST" enctype="multipart/form-data">
 

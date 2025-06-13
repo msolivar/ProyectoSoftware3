@@ -46,7 +46,7 @@ if (isset($_SESSION['articulos'])) {
         background-size: 100% 100%;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-color: #F1F1F1;
+        background-color: lavender;
     }
 
     main {
@@ -153,6 +153,7 @@ if (isset($_SESSION['articulos'])) {
                             </div>
 
                             <h5>¡No tienes cuenta! <a style="color:#00FFFF" href="registrarcliente.php">Regístrate</a></h5>
+                            <h5>¡Recuperar cuenta! <a style="color:#00FFFF" href="recuperarcuenta.php">Recuperar</a></h5>
 
                             <div class="row">
 

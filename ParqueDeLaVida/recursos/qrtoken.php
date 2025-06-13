@@ -46,7 +46,7 @@ $correo = $correoUsuario;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: lavender;
             display: flex;
             align-items: center;
             /* Centra verticalmente */

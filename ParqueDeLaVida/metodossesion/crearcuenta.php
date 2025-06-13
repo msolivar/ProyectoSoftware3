@@ -25,5 +25,9 @@ if (mysqli_num_rows($res) > 0) {
         VALUES (NULL,'" . $cedula . "','" . $nombre . "','" . $apellido . "','"
         . $email . "','" . $telefono . "','" . $password . "','Cliente',NOW())";
     $qry = $conexion->query($sql);
-    header("Location:../login.php");
+    
+    echo '<script type="text/javascript">
+	    alert("Cliente Registrado Bienvenido al parque de la vida");
+  		window.location="../login.php"
+	    </script>';
 }
